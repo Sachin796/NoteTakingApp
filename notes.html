@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Note Taking App</title>
+    <link rel="stylesheet" href="./notes.css" />
+    <script type="text/javascript" src="./index.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </head>
+  <body>
+    <div id="maindiv">
+      <div
+        style="
+          width: 30%;
+          height: auto;
+          margin-top: 4vh;
+          border: 1px solid black;
+          float: right;
+          background-color: hsl(61, 100%, 51%);
+        "
+        id="form"
+      >
+        <p
+          style="
+            text-align: center;
+            font-family: Lucida Console, Monaco, monospace;
+          "
+        >
+          Title
+        </p>
+        <div
+          class="notetitle"
+          id="title"
+          style="border-bottom: 1px solid black; width: 35%; margin: auto;"
+          contenteditable
+        ></div>
+        <p
+          style="
+            text-align: center;
+            font-family: Lucida Console, Monaco, monospace;
+          "
+        >
+          Description
+        </p>
+        <div
+          class="notebody"
+          contenteditable
+          id="description"
+          style="border-bottom: 1px solid black; width: 65%; margin: auto;"
+        ></div>
+        <div style="text-align: center;" class="center">
+          <button id="btn">Create Note</button>
+        </div>
+      </div>
+
+      <!-- Categories -->
+      <section id="columns">
+        <div
+          class="column dropzone"
+          ondragenter="dragEnter(event);"
+          ondragover="dragOver(event)"
+          ondragleave="dragLeave(event)"
+          ondrop="drop(event)"
+          style="margin-left: 2vw;"
+        >
+          <h3 class="column-title">Home</h3>
+          <ul class="tasks" id="tasks-added"></ul>
+        </div>
+        <div
+          class="column dropzone"
+          ondragenter="dragEnter(event);"
+          ondragover="dragOver(event)"
+          ondragleave="dragLeave(event)"
+          ondrop="drop(event)"
+        >
+          <h3 class="column-title">Work</h3>
+        </div>
+        <div
+          class="column dropzone"
+          ondragenter="dragEnter(event);"
+          ondragover="dragOver(event)"
+          ondragleave="dragLeave(event)"
+          ondrop="drop(event)"
+        >
+          <h3 class="column-title">Misc</h3>
+        </div>
+      </section>
+    </div>
+    <div id="mainnotesdiv"></div>
+  </body>
+</html>

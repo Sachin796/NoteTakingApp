@@ -1,0 +1,136 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: aquamarine;
+  line-height: 1.6;
+}
+
+#mainnotesdiv,
+#maindiv {
+  padding: 50px;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#secondarynotesdiv {
+  justify-content: center;
+  word-wrap: break-word;
+  animation: fadein 1.5s;
+  margin: 0 auto;
+}
+
+.eachnote {
+  background-color: #f0c806;
+  padding: 1.7vh;
+  border-radius: 8px;
+  width: 230px;
+  margin: 0 10px 20px;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s;
+  cursor: pointer;
+  font-family: "Lucida Console", Monaco, monospace;
+}
+
+.notetitle,
+.notebody {
+  padding: 15px 16px 0;
+}
+
+.editbtn {
+  padding: 10px 16px 0;
+  width: auto;
+  display: flex;
+  border-bottom: 1px solid black;
+}
+
+#btn {
+  background-color: #f4511e;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: all 0.8s;
+  margin-top: 7vh;
+}
+
+#btn:hover {
+  opacity: 1;
+}
+#delete,
+#editbutton {
+  width: 50%;
+  text-align: center;
+  margin-bottom: 1vh;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+[contentEditable]:empty:not(:focus):before {
+  content: attr(data-text);
+}
+
+#content {
+  margin-bottom: 1.7vh;
+}
+
+div:focus {
+  outline: none;
+}
+
+#columns {
+  margin-top: 4.5vh;
+  display: flex;
+  overflow: auto;
+}
+
+.column {
+  flex: 0 0 auto;
+  width: 280px;
+  height: 320px;
+  background: #ffffff;
+  box-sizing: border-box;
+  border-radius: 1px;
+  margin-left: 10px;
+  background-color: white;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.column:hover {
+  border: 1px solid #4786ff;
+  box-shadow: 0px 1px 6px #4786ff;
+}
+.column-title {
+  margin: 24px 0px 0px 24px;
+  font-family: "Lucida Console, Monaco, monospace";
+  font-weight: 400;
+  font-size: 24px;
+  text-align: center;
+}
+
+.hold:active:hover {
+  border: solid 3px blue;
+}
+
+.invisible {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
